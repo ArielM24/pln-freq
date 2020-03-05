@@ -1,6 +1,5 @@
 import nltk
 from bs4 import BeautifulSoup
-from pickle import dump, load
 
 def erase_sym(str, sym):
 	strings = []
