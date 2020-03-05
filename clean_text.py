@@ -71,6 +71,7 @@ if __name__ == '__main__':
 	num = ["0","1","2","3","4","5","6","7","8","9"]
 
 	text = clean_chars(text, sym + num,size=2)
+	text = [w.lower() for w in text]
 	vocabulary = get_vocabulary(text)
 
 	print(len(text), len(vocabulary))
