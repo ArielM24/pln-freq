@@ -5,11 +5,7 @@ from pickle import load, dump
 def get_hs(text):
 	titles = []
 	soup = BeautifulSoup(text, "html.parser")
-	titles = titles + soup.find_all("h1")
-	titles = titles + soup.find_all("h2")
-	titles = titles + soup.find_all("h3")
-	titles = titles + soup.find_all("h4")
-	titles = titles + soup.find_all("h5")
+	titles = titles + soup.find_all(["h3","b"])
 	return titles
 
 def clear_tags(tags):

@@ -7,13 +7,14 @@ def filter(tups, pos):
 
 if __name__ == '__main__':
 	ftext = open("lemmatizated_text.txt","r")
-	tups = []
+	tups, aux = [], []
 	for line in ftext:
 		t = line.split()
-		tups.append((t[0],t[1]))
+		aux.append((t[0],t[1]))
 	ftext.close()
 
-	tups = filter(tups, "NOUN")
+	tups = filter(aux, "NOUN")
+	tups = tups + filter(aux, "PROPN")
 
 	fnouns = open("lemma_nouns.txt","w")
 	for t in tups:
